@@ -5,6 +5,7 @@
 node_t *list_create(void *data) {
     node_t *p = malloc(sizeof(node_t));
     p->data = data;
+    p->next = NULL;
     return p;
 }
 
