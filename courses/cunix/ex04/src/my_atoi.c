@@ -30,8 +30,9 @@ int digits(int num) {
     return n;
 }
 
-char *my_itoa(int number) {
-    char *buff = malloc(sizeof(char)*32);
+const char *my_itoa(int number) {
+    /* char *buff = malloc(sizeof(char)*32); */
+    static char buff[32];
     unsigned int i = 0;
    
     if (number == 0) {
