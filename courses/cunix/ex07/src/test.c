@@ -5,10 +5,10 @@
 #include "linked_list.h"
 #include <assert.h>
 
-void printInt(void *data)
-{
-  printf("%s\n", data);
-}
+/* void printInt(void *data) */
+/* { */
+/*   printf("%s\n", data); */
+/* } */
 
 void test_destroy_push(void *data)
 {
@@ -120,7 +120,7 @@ int test_pop()
   asprintf(&str, "Test pop: ok");
   list_push(head, str);
 
-  list_pop(&head);
+  printf("%s\n", (char*)list_pop(&head));
 
   list_destroy(&head, &test_destroy_push);
 
@@ -138,7 +138,7 @@ int test_shift()
   list_push(head, str);
 
   list_shift(&head);
-  list_shift(&head);
+  printf("%s\n", (char*)list_shift(&head));
 
   list_destroy(&head, &test_destroy_push);
 
