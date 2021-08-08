@@ -3,7 +3,7 @@ CC					:= gcc
 
 RM					:= rm -rf
 
-LDFLAGS			    += -Llib
+LDFLAGS			    += -Llib -lm
 
 CFLAGS		    	+= -Iinclude -Wall -Wextra -Werror -g
 
