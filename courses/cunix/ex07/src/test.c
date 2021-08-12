@@ -120,7 +120,7 @@ int test_pop()
   asprintf(&str, "Test pop: ok");
   list_push(head, str);
 
-  printf("%s\n", (char*)list_pop(&head));
+  free(list_pop(&head));
 
   list_destroy(&head, &test_destroy_push);
 
@@ -164,7 +164,7 @@ int test_remove()
   asprintf(&str, "5");
   list_push(head, str);
 
-  list_remove(&head, 3);
+  free(list_remove(&head, 3));
 
   list_destroy(&head, &test_destroy_push);
 
@@ -208,10 +208,10 @@ int test_global()
   }
 
   for(int i = 0; i < 10000; i++)
-    list_pop(&head);
+    free(list_pop(&head));
 
   for(int i = 0; i < 10000; i++)
-    list_shift(&head);
+    free(list_shift(&head));
 
   list_destroy(&head, &test_destroy_push);
 
