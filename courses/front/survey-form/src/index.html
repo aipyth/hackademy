@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/styles.css" rel="stylesheet" />
+    <title>Title</title>
+</head>
+<body class="bg-gradient-to-r from-white to-green-100">
+    <div class="container mx-auto md:w-1/2 flex flex-col bg-white p-12 rounded-b-lg">
+
+    <h1 id="title" class="text-4xl font-bold">Title</h1>
+    <p id="description" class="text-lg">Some long description.</p>
+
+    <form id="survey-form" class="flex flex-col py-4">
+        <label id="name-label" for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name">
+
+        <label id="email-label" for="email">Email</label>
+        <input id="email" type="email" placeholder="Your email">
+
+        <label id="number-label" for="number">Age</label>
+        <input id="number" type="number" placeholder="Your age" min="0" max="100">
+
+        <select id="dropdown" class="my-2"> 
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+        </select>
+
+        <div class="flex flex-col my-2 text-lg">
+            <span>
+                <input id="radio-input1" type="radio" name="radio">
+                <label for="radio-inpu1">radio1</label>
+            </span>
+            <span>
+                <input id="radio-input2" type="radio" name="radio">
+                <label for="radio-inpu2">radio2</label>
+            </span>
+            <span>
+                <input id="radio-input3" type="radio" name="radio">
+                <label for="radio-inpu3">radio3</label>
+            </span>
+        </div>
+
+        <div class="flex flex-col my-2 text-lg">
+            <span>
+                <input id="checkbox-input1" type="checkbox" name="checkbox" value="checked1">
+                <label for="checkbox-input1">checkbox1</label>
+            </span>
+            <span>
+                <input id="checkbox-input2" type="checkbox" name="checkbox" value="checked2">
+                <label for="checkbox-input2">checkbox2</label>
+            </span>
+        </div>
+
+        <textarea id="textarea-input" name="comments" cols="30" rows="10"
+            class="p-1 border border-gray-400 rounded"></textarea>
+
+        <button type="submit" class="w-full py-2 my-2 bg-gray-200 text-lg">Submit</button>
+    </form>
+
+    </div>
+</body>
+</html>
