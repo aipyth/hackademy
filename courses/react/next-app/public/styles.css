@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+
+body {
+    @apply text-gray-700;
+}
+
+.logo {
+    @apply font-sans text-4xl drop-shadow-lg;
+    text-shadow: 0px 4px 4px #FFFFFF;
+}
+
+.info-text {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 1);
+    @apply mb-10 h-96 text-white; 
+
+}
+.info-text h3 {
+    @apply text-3xl font-bold my-4;
+}
+.info-text p {
+    @apply text-xl font-serif;
+}
+.info-button {
+    @apply flex w-full md:w-1/4 mb-10 flex justify-center self-end; 
+}
+.info-button a {
+    @apply bg-yellow-300 rounded-md flex py-2 text-xl text-black px-24 shadow-lg;
+}
+
+#info-card1 {
+    background-image: url("./image-1.png");
+    @apply bg-cover;
+}
+
+#info-card2 {
+    background-image: url("./image-2.png");
+    @apply bg-cover;
+}
+
+.dropdown-main {
+    @apply block w-full bg-yellow-400 rounded my-1 p-2 flex justify-between items-center;
+}
+
+.dropdown-selectable {
+    @apply block w-full bg-yellow-400 rounded text-center p-2 my-1;
+}
+
+.forecast {
+    @apply flex flex-col items-center bg-yellow-600 p-8;
+}
+.forecast form {
+    @apply flex flex-row w-full justify-center font-bold text-yellow-50 text-xl;
+}
+.forecast form input {
+    @apply bg-yellow-600 text-yellow-50 border-b-2 border-yellow-500 focus:ring-0 focus:outline-none ml-2 text-center;
+}
+.forecast table {
+    @apply md:w-1/2 text-white mt-10;
+}
+.forecast table caption {
+    @apply text-3xl font-bold;
+}
+
+.login {
+    @apply flex flex-col w-full bg-yellow-600 text-white;
+}
+.login h1 {
+    @apply text-3xl font-serif text-center my-8;
+}
+.login form {
+    @apply flex flex-col items-center space-y-2 mb-4;
+}
+.login form input {
+    @apply text-black rounded bg-yellow-100 p-2 focus:outline-none;
+}
+.login form button[type="submit"] {
+    @apply bg-yellow-500 text-white text-xl m-0 py-2 px-8 rounded;
+}
+.login .message {
+    @apply text-xl text-yellow-50 text-center;
+}
+
+@tailwind utilities;
