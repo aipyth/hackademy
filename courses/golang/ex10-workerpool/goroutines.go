@@ -24,10 +24,13 @@ func runWorker(id int, w *bufio.Writer, tasks <-chan Task, stopChannel chan int)
     for {
         select {
         case t := <-tasks:
-            w.Write([]byte(
+            os.Stdout.Write([]byte(
                 fmt.Sprintf("worker:%d sleep:%.1f\n", id, t.work),
             ))
-            w.Flush()
+            // w.Write([]byte(
+            //     fmt.Sprintf("worker:%d sleep:%.1f\n", id, t.work),
+            // ))
+            // w.Flush()
             doWork(t)
         default:
             stopChannel <- id
@@ -56,10 +59,13 @@ func Run(poolSize int) {
     stopIdlingWorker := func() bool {
         select {
         case s := <-stopChannel:
-            writer.Write([]byte(
+            // writer.Write([]byte(
+            //     "worker:" + strconv.Itoa(s) + " stopping\n",
+            // )) 
+            // writer.Flush()
+            os.Stdout.Write([]byte(
                 "worker:" + strconv.Itoa(s) + " stopping\n",
             )) 
-            writer.Flush()
             workersOn--
             return false
         default:
@@ -75,8 +81,9 @@ func Run(poolSize int) {
             if err == nil {
                 // spawn new worker if needed and schedule the task
                 if workersOn < poolSize {
-                    writer.Write([]byte("worker:" + strconv.Itoa(workersOn + 1) + " spawning\n"))
-                    writer.Flush()
+                    // writer.Write([]byte("worker:" + strconv.Itoa(workersOn + 1) + " spawning\n"))
+                    // writer.Flush()
+                    os.Stdout.Write([]byte("worker:" + strconv.Itoa(workersOn + 1) + " spawning\n"))
                     go runWorker(workersOn + 1, writer, tasks, stopChannel)
                     workersOn++
                 }
